@@ -1,4 +1,5 @@
 import json
+import os
 from datetime import datetime
 
 from fastapi import FastAPI, Depends, HTTPException
@@ -31,6 +32,26 @@ app.include_router(admin_router)
 @app.on_event("startup")
 def on_startup():
     create_db()
+    _seed_admin()
+
+
+def _seed_admin():
+    email    = os.getenv("ADMIN_EMAIL", "").strip().lower()
+    password = os.getenv("ADMIN_PASSWORD", "").strip()
+    if not email or not password:
+        return
+    from auth import hash_password
+    with Session(next(get_session())) as session:
+        existing = session.exec(select(User).where(User.email == email)).first()
+        if existing:
+            return
+        admin = User(email=email, password_hash=hash_password(password), tier="pro", is_admin=True)
+        session.add(admin)
+        session.commit()
+        session.refresh(admin)
+        session.add(UserData(user_id=admin.id))
+        session.commit()
+        print(f"[startup] Admin account created: {email}")
 
 
 # ── Health ────────────────────────────────────────────────────────────────────
