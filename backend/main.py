@@ -41,7 +41,8 @@ def _seed_admin():
     if not email or not password:
         return
     from auth import hash_password
-    with Session(next(get_session())) as session:
+    from database import engine
+    with Session(engine) as session:
         existing = session.exec(select(User).where(User.email == email)).first()
         if existing:
             return
