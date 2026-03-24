@@ -1,0 +1,365 @@
+.suggestions {
+  padding: 0 0 40px;
+}
+
+.sug-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 12px;
+}
+
+.sug-heading {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  margin-bottom: 4px;
+}
+
+.sug-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.btn-analyze {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+
+.btn-analyze:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.btn-analyze:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* Summary bar */
+.sug-summary {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+/* Metric pills */
+.sug-metrics {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.metric-pill {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.metric-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metric-value {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.metric-value--saved   { color: var(--saved); }
+.metric-value--invested { color: var(--invested); }
+.metric-value--spent   { color: var(--spent); }
+
+/* Suggestion cards */
+.sug-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sug-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+}
+
+.sug-card--alert   { border-left-color: var(--spent); }
+.sug-card--action  { border-left-color: var(--accent); }
+.sug-card--insight { border-left-color: var(--saved); }
+.sug-card--market  { border-left-color: var(--invested); }
+.sug-card--income  { border-left-color: #ca8a04; }
+.sug-card--profile { border-left-color: #db2777; }
+
+.sug-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.sug-tag {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.tag--alert   { background: #fee2e2; color: #b91c1c; }
+.tag--action  { background: #dbeafe; color: #1d4ed8; }
+.tag--insight { background: #dcfce7; color: #15803d; }
+.tag--market  { background: #ede9fe; color: #6d28d9; }
+.tag--income  { background: #fef9c3; color: #854d0e; }
+.tag--profile { background: #fce7f3; color: #9d174d; }
+
+.sug-priority {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--spent);
+  line-height: 1;
+}
+
+.sug-card-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.sug-card-text {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.sug-sources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.sug-source {
+  font-size: 10px;
+  color: var(--text-muted);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px 6px;
+  letter-spacing: 0.2px;
+}
+
+/* Report layout */
+.report {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.report-summary {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.report-metrics {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.report-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.report-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-left: 3px solid var(--border);
+  background: var(--bg);
+}
+
+.report-section-title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+}
+
+.report-section-count {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--border);
+  border-radius: 99px;
+  padding: 1px 7px;
+}
+
+.report-section-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.report-item {
+  padding: 14px 16px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.report-item--high {
+  background: #fffbeb;
+}
+
+.report-item-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.report-item-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  flex: 1;
+}
+
+.report-item-urgent {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: #b91c1c;
+  background: #fee2e2;
+  border-radius: 4px;
+  padding: 2px 7px;
+}
+
+.report-item-text {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* Pro upgrade gate */
+.report-upgrade {
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  background: var(--surface);
+  position: relative;
+}
+
+.report-upgrade-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.report-upgrade-tag {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 3px 9px;
+  opacity: 0.6;
+}
+
+.report-upgrade-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.report-upgrade-sub {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.55;
+  max-width: 500px;
+}
+
+.report-upgrade-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  background: linear-gradient(135deg, #6d28d9, #2563eb);
+  color: #fff;
+  border-radius: 6px;
+  padding: 3px 10px;
+}
+
+/* States */
+.sug-error {
+  background: #fee2e2;
+  border: 1px solid #fca5a5;
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  font-size: 13px;
+  color: #b91c1c;
+  margin-bottom: 16px;
+  font-family: 'SF Mono', monospace;
+}
+
+.sug-placeholder {
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 40px 24px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.sug-empty {
+  font-size: 13px;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 24px;
+}

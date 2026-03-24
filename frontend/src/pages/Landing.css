@@ -1,0 +1,308 @@
+.landing {
+  min-height: 100vh;
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Nav */
+.land-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 48px;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  z-index: 10;
+}
+
+.land-logo {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: var(--text);
+}
+
+.land-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.land-nav-link {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.land-nav-link:hover {
+  color: var(--text);
+}
+
+.land-btn-nav {
+  background: var(--text);
+  color: var(--surface);
+  border-radius: 8px;
+  padding: 7px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+
+.land-btn-nav:hover {
+  opacity: 0.85;
+}
+
+/* Hero */
+.land-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 80px 24px 60px;
+  max-width: 680px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.land-hero-badge {
+  display: inline-block;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 4px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.2px;
+}
+
+.land-hero-title {
+  font-size: clamp(32px, 6vw, 52px);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+  color: var(--text);
+}
+
+.land-hero-sub {
+  font-size: 16px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  max-width: 520px;
+}
+
+.land-hero-cta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.land-btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border-radius: 10px;
+  padding: 11px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.land-btn-primary:hover {
+  background: var(--accent-hover);
+}
+
+.land-btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 11px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.15s;
+}
+
+.land-btn-ghost:hover {
+  border-color: var(--text-muted);
+}
+
+/* Dashboard preview */
+.land-preview {
+  width: 100%;
+  max-width: 520px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+  margin-top: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.land-preview-bar {
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.land-preview-seg { height: 100%; }
+.land-preview-seg--saved    { background: var(--saved); }
+.land-preview-seg--invested { background: var(--invested); }
+.land-preview-seg--spent    { background: var(--spent); }
+
+.land-preview-stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.preview-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.preview-stat-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+}
+
+.preview-stat-value {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.preview-stat-value--saved    { color: var(--saved); }
+.preview-stat-value--invested { color: var(--invested); }
+.preview-stat-value--spent    { color: var(--spent); }
+.preview-stat-value--bold     { font-size: 18px; }
+
+/* Feature cards */
+.land-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px 64px;
+  width: 100%;
+}
+
+.land-feature-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: box-shadow 0.15s;
+}
+
+.land-feature-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.land-feature-card--saved    { border-top-color: var(--saved); }
+.land-feature-card--invested { border-top-color: var(--invested); }
+.land-feature-card--accent   { border-top-color: var(--accent); }
+
+.land-feature-icon {
+  font-size: 20px;
+  color: var(--text-muted);
+}
+
+.land-feature-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.2px;
+}
+
+.land-feature-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Data sources strip */
+.land-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 32px 24px 48px;
+  border-top: 1px solid var(--border);
+}
+
+.land-data-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+}
+
+.land-data-sources {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.land-data-source {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+/* Footer */
+.land-footer {
+  border-top: 1px solid var(--border);
+  padding: 20px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.land-footer-links {
+  display: flex;
+  gap: 16px;
+}
+
+.land-footer-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.land-footer-links a:hover {
+  color: var(--text);
+}
+
+@media (max-width: 480px) {
+  .land-nav  { padding: 16px 20px; }
+  .land-footer { padding: 16px 20px; flex-direction: column; gap: 8px; text-align: center; }
+  .land-preview-stats { gap: 4px; }
+  .preview-stat-value { font-size: 14px; }
+}

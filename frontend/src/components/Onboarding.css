@@ -1,0 +1,268 @@
+.ob-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 20px;
+}
+
+.ob-modal {
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 32px 28px 24px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Progress dots */
+.ob-progress {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+.ob-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--border);
+  transition: background 0.2s;
+}
+
+.ob-dot--active {
+  background: var(--accent);
+}
+
+/* Step content */
+.ob-step {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ob-title {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: var(--text);
+}
+
+.ob-sub {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-top: -6px;
+}
+
+.ob-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.ob-optional {
+  font-weight: 400;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+/* Income step */
+.ob-income-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.ob-input-wrap {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  gap: 4px;
+  flex: 1;
+  background: var(--bg);
+  transition: border-color 0.15s;
+}
+
+.ob-input-wrap:focus-within {
+  border-color: var(--accent);
+}
+
+.ob-prefix {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.ob-input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+  color: var(--text);
+  width: 100%;
+}
+
+.ob-input::-webkit-outer-spin-button,
+.ob-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.ob-period-toggle {
+  display: flex;
+  background: var(--border);
+  border-radius: 8px;
+  padding: 3px;
+  gap: 2px;
+}
+
+.ob-period-btn {
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.ob-period-btn--active {
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Chips (age + goals) */
+.ob-age-grid,
+.ob-goals-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ob-chip {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, color 0.15s;
+}
+
+.ob-chip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.ob-chip--active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* Risk cards */
+.ob-risk-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ob-risk-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.15s, background 0.15s;
+  width: 100%;
+}
+
+.ob-risk-card:hover {
+  border-color: var(--accent);
+}
+
+.ob-risk-card--active {
+  border-color: var(--accent);
+  background: #eff6ff;
+}
+
+.ob-risk-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.ob-risk-desc {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Actions */
+.ob-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.ob-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 9px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, opacity 0.15s;
+}
+
+.ob-btn--next {
+  background: var(--accent);
+  color: #fff;
+}
+
+.ob-btn--next:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.ob-btn--next:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.ob-btn--back {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+.ob-btn--back:hover {
+  background: var(--bg);
+}
+
+.ob-skip {
+  background: none;
+  border: none;
+  font-size: 12px;
+  color: var(--text-muted);
+  cursor: pointer;
+  text-align: center;
+  text-decoration: underline;
+  padding: 0;
+  margin-top: -12px;
+}

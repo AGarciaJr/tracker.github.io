@@ -1,0 +1,377 @@
+.goals {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.goals-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.goals-add-btns {
+  display: flex;
+  gap: 8px;
+}
+
+.goals-heading {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.btn-add-goal {
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 7px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-add-goal:hover {
+  background: var(--accent-hover);
+}
+
+.btn-add-goal--link {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.btn-add-goal--link:hover {
+  background: var(--accent);
+  color: white;
+}
+
+/* Add goal form */
+.goal-form {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: var(--shadow);
+}
+
+.gf-input {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 7px 10px;
+  font-size: 13px;
+  outline: none;
+  background: var(--bg);
+  color: var(--text);
+  width: 100%;
+  transition: border-color 0.15s;
+}
+
+.gf-input:focus {
+  border-color: var(--accent);
+}
+
+.gf-amount-wrap {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  padding: 7px 10px;
+  gap: 4px;
+  transition: border-color 0.15s;
+}
+
+.gf-amount-wrap:focus-within {
+  border-color: var(--accent);
+}
+
+.gf-prefix {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.gf-input--amount {
+  border: none;
+  padding: 0;
+  background: transparent;
+  outline: none;
+  text-align: right;
+  flex: 1;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.gf-input--amount::-webkit-outer-spin-button,
+.gf-input--amount::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.gf-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.gf-error {
+  font-size: 12px;
+  color: var(--spent);
+  background: #fee2e2;
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+
+/* Link import preview */
+.gf-preview {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.gf-preview-img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  flex-shrink: 0;
+}
+
+.gf-preview-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+
+.gf-preview-source {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* Shared form buttons — imported via App globals */
+.btn-confirm {
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-confirm:hover {
+  background: var(--accent-hover);
+}
+
+.btn-cancel {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-cancel:hover {
+  background: var(--border);
+}
+
+.goals-empty {
+  color: var(--text-muted);
+  font-size: 13px;
+  padding: 40px 0;
+  text-align: center;
+}
+
+/* Goals grid */
+.goals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+/* Goal card */
+.goal-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.goal-card--complete {
+  border-color: var(--saved);
+}
+
+.goal-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.goal-card-title {
+  font-size: 14px;
+  font-weight: 600;
+  flex: 1;
+}
+
+.btn-remove {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 1px 3px;
+  border-radius: 4px;
+  transition: color 0.15s, opacity 0.15s;
+  flex-shrink: 0;
+  line-height: 1;
+  opacity: 0.5;
+}
+
+.btn-remove:hover {
+  color: var(--spent);
+  opacity: 1;
+}
+
+/* Progress bar */
+.goal-progress-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.goal-bar {
+  flex: 1;
+  height: 6px;
+  background: var(--border);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.goal-bar-fill {
+  height: 100%;
+  background: var(--saved);
+  border-radius: 99px;
+  transition: width 0.3s ease;
+}
+
+.goal-pct {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  min-width: 30px;
+  text-align: right;
+}
+
+/* Goal rows */
+.goal-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.goal-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.goal-row-label {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.goal-row-value {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.goal-row-value--remaining {
+  color: var(--spent);
+}
+
+/* Inline amount input */
+.goal-input-wrap {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  padding: 4px 8px;
+  gap: 3px;
+  transition: border-color 0.15s;
+}
+
+.goal-input-wrap:focus-within {
+  border-color: var(--accent);
+}
+
+.goal-input-prefix {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.goal-inline-input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  width: 80px;
+  text-align: right;
+}
+
+.goal-inline-input::-webkit-outer-spin-button,
+.goal-inline-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* Goal card product image */
+.goal-card-img {
+  width: 100%;
+  max-height: 140px;
+  object-fit: contain;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+}
+
+/* Goal card link */
+.goal-card-link {
+  display: inline-block;
+  font-size: 12px;
+  color: var(--accent);
+  text-decoration: none;
+  margin-top: 2px;
+}
+
+.goal-card-link:hover {
+  text-decoration: underline;
+}
+
+.goal-complete-badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--saved);
+  padding: 3px 8px;
+  background: #dcfce7;
+  border-radius: 99px;
+  align-self: flex-start;
+}
