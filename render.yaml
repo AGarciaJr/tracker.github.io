@@ -2,11 +2,12 @@ services:
   - type: web
     name: tracker-api
     runtime: python
-    pythonVersion: "3.13.1"
     rootDir: backend
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT --loop asyncio
     envVars:
+      - key: PYTHON_VERSION
+        value: "3.13.1"
       - key: ALPHA_VANTAGE_KEY
         sync: false
       - key: FRED_KEY
